@@ -15,6 +15,7 @@ export default function Navbar() {
     const navigation = [
         { name: 'Home', href: '/', current: currentPage == "/" ? true : false },
         { name: 'Comics', href: '/comics', current: currentPage == "/comics" ? true : false },
+        { name: 'Games', href: '/games', current: currentPage == "/games" ? true : false },
         { name: 'Memes', href: '/memes', current: currentPage == "/memes" ? true : false },
         { name: 'Music', href: '/music', current: currentPage == "/music" ? true : false },
     ]
