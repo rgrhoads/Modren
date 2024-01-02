@@ -12,9 +12,11 @@
   "dependencies": {
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
+    "lodash.throttle": "^4.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.18.0"
+    "react-router-dom": "^6.18.0",
+    "react-use-websocket": "^4.5.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
