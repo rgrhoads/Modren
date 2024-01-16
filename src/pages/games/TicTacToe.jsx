@@ -10,6 +10,8 @@ const TicTacToe = (props) => {
     const [gameId, setGameId] = React.useState("")
     const [opponent, setOpponent] = React.useState("")
     const [username, setUsername] = React.useState(props.username)
+    const [userSymbol, setUserSymbol] = React.useState("")
+    const [currentTurn, setCurrentTurn] = React.useState("")
 
     const GAME_TYPE = "tictactoe"
     const WS_URL = `ws://localhost:3773/ws/game/${GAME_TYPE}`
@@ -34,11 +36,15 @@ const TicTacToe = (props) => {
             if(lastJsonMessage.pX || lastJsonMessage.pO) {
                 if(lastJsonMessage.pX == username) {
                     setOpponent(lastJsonMessage.pO)
+                    setUserSymbol("X")
                 } else {
                     setOpponent(lastJsonMessage.pX)
+                    setUserSymbol("O")
                 }
-
             }
+
+            setCurrentTurn(lastJsonMessage.turn)
+            console.log("Winner: " + lastJsonMessage.winner)
         }
 
     }, [lastJsonMessage])
@@ -110,7 +116,15 @@ const TicTacToe = (props) => {
         } else {
             return (
                 <>
-                    {`Opponent: ${opponent}`}
+                    <div>
+                        {`Current Opponent: ${opponent}`}
+                    </div>
+                    <div>
+                        {`Your Symbol: ${userSymbol}`}
+                    </div>
+                    <div>
+                        {`Current Turn: ${currentTurn}`}
+                    </div>
                 </>
             )
         }
