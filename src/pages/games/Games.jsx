@@ -51,15 +51,16 @@ const Games = () => {
             {username == "" ? 
             <>
                 <p className="mx-6"> Enter your Username to continue! </p>
-                <div className="flex">
-                    <div>Username: </div>
+                <div className="flex mt-4 mx-6">
                     <TextField
-                        className=""
-                        onChange={(e) => {
-                            setTempUsername(e.target.value)
-                        }}
+                    className=""
+                    onChange={(e) => {
+                        setTempUsername(e.target.value)
+                    }}
                     />
-                    <button onClick={() => {setUsername(tempUsername)}}>
+                    <button 
+                    className="justify-center align-middle w-28 h-14 ml-2 border-2 border-slate-500 rounded-lg bg-slate-300 shadow-lg hover:bg-slate-200" 
+                    onClick={() => {setUsername(tempUsername)}}>
                         Submit
                     </button>
                 </div>
